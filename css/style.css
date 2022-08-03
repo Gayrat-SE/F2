@@ -11,7 +11,7 @@
 }
 .sidebar {
     display: none;
-    position: relative;
+    position: absolute;
     left: -60%;
 }
 .sidebar.active {
@@ -21,22 +21,35 @@ nav {
     /* background-color: #333; */
     margin-top: -30px;
 }
-nav ul {
+nav .menu-list ul {
     display: flex;
     flex-direction: column;
     list-style: none;
     margin: auto;
-    width: 60%;
+    width: 45%;
     height: 550px;
     padding: 0;
     position: fixed;
     align-items: center;
     justify-content: center;
     background-color: #333;
+    height: 100vh;
+}
+
+.phone-mobile{
+    display: none;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    border-bottom: 2px solid #d1a954;
+}
+
+.phone-mobile a {
+    font-size: 24px;
 }
 
 .menu-toggle {
-    position: relative;
+    position: fixed;
     display: none;
     top: 30px;
     left: 20px;
@@ -44,7 +57,16 @@ nav ul {
     z-index: 1;
 }
 .menu-toggle.active {
-    left: 50%;
+    display: block;
+    left: 35%;
+
+}
+
+.menu-toggle-close.active {
+    position:relative;
+    display: block;
+    top: 0;
+    left: 80%;
 }
 nav ul li {
     display: block;
@@ -574,7 +596,7 @@ footer{
         border-bottom: 1px solid #d1a954;
         text-align: center;
         margin: auto;
-        margin-left: 30%;
+        margin-left: 1%;
     }
     .main-content__slider{
         display: none;
@@ -584,12 +606,16 @@ footer{
         margin: 150px 0;
     }
     .second-page__content {
+        width: 100% !important;
         justify-content: space-around;
+        
     }
-    .second-page__content-icon{
-        width: 90% !important;
+    .second-page__content-icon-content{
         display: flex !important;
-        justify-content: space-around !important;
+        justify-content: space-between;
+    }
+    .first-icon p, .second-icon p{
+        text-align: center;
     }
     .second-page__content-image{
         display: none;
@@ -646,6 +672,9 @@ footer{
     .menu-toggle {
 		display: block;
 	}
+    .phone-mobile{
+        display: block;
+    }
 	/* .sidebar {
 		position: fixed;
 		top: 0;
@@ -713,6 +742,24 @@ footer{
 }
 
 @media (min-width:576px) and (max-width:767px){
+    .phone-mobile{
+        display: none;
+    }
+    .sidebar{
+        display: block;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .sidebar.active{
+        left: 0;
+    }
+    .menu-toggle-close {
+        display: block;
+    }
+    .menu-toggle-close.active{
+        display: block;
+    }
     header,aside {
         display: none;
     }
@@ -752,7 +799,12 @@ footer{
         height: 450px;
         margin: 100px auto;
     }
-    .partner-section__logo img:nth-child(2n+1) {
+    .partner-section__logo {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 100px;
+    }
+    .partner-section__logo img:nth-child(1), .partner-section__logo img:nth-child(2), .partner-section__logo img:nth-child(3), .partner-section__logo img:nth-child(4), .partner-section__logo img:nth-child(5), .partner-section__logo img:nth-child(6){ 
         display: none;
     }
     .form-section{
@@ -788,7 +840,16 @@ footer{
     }
 }
 
-@media (max-width:575px){
+@media (max-width:576px){
+    .sidebar{
+        display: block;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .sidebar.active{
+        left: 0;
+    }
     aside, header {
         display: none;
     }
@@ -815,6 +876,26 @@ footer{
         display: flex;
         justify-content: space-between;
     }
+
+    .second-page__content-info {
+        width: auto;
+    }
+    .second-page__content-icon{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .second-page__content-icon-header{
+        text-align: center;
+    }
+    .second-page__content-icon-content{
+        display: flex;
+        justify-content: space-around;
+    }
+    .second-page__content-icon-content p{
+        display: block;
+    }
     .second-page__content-image{
         display: none;
     }
@@ -827,22 +908,30 @@ footer{
     .info-section {
         margin: 100px  5%;
     }
+    .info-section__content{
+        display: flex;
+        flex-wrap: nowrap;
+    }
     .info-section__content-years{
         text-align: center;
-        /* margin: auto; */
+        margin: 30px;
+        padding: 0;
     }
     .info-section__content-years h3 {
-        font-size: 24px;
-        line-height: 20px;
+        font-size: 34px;
+        line-height: 50px;
         text-align: center;
     }
     .info-section__rayting {
         text-align: center;
-        padding-top: 20px;
+        padding-top: 80px;
     }
     .info-section img {
         width: 40px;
     }
+
+    
+
     .info-section__content-text {
         padding-right: 0px;
     }
@@ -850,6 +939,7 @@ footer{
         font-size: 24px;
         width: auto;
         text-align: center;
+        line-height: 30px;
     }
     .partner-section{
         width: 95%;

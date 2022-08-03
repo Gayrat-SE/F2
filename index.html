@@ -25,21 +25,34 @@
     <div class="container">
         <!-- main page -->
         <div class="main-page">
-            <div class="menu-toggle">
-                <i class="fa-solid fa-bars"></i>
+            <div class="menu-toggle"id="iChange">
+                <i  onclick="myFunction(this)" class="fa-solid fa-bars"></i>
+            </div>
+            <div class="phone-mobile">
+                <a href="#" class="phonenumber">+74951234567</a>
             </div>
             <div class="sidebar">
                 
                 <nav class="menu">
                     
-                    <ul>
-                        <li><a href="#">Main</a></li>
-                        <li><a href="#">Theatre</a></li>
-                        <li><a href="#">Our Parthers</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#" class="phonenumber">+74951234567</a></li>
-                    </ul>
+                    <div class="menu-list">
+                        <ul>
+                            <li><a href="#">Main</a></li>
+                            <li><a href="#">Theatre</a></li>
+                            <li><a href="#">Our Parthers</a></li>
+                            <li><a href="#">Partners</a></li>
+                            <li><a href="#">Contacts</a></li>
+                        </ul>
+                    </div>
+                    <div class="social">
+                        <ul>
+                            <li><i class="fa fa-instagram"></i></li>
+                            <li><i class="fa fa-facebook"></i></li>
+                            <li><i class="fa fa-vk"></i></li>
+                            <li><i class="fa-brands fa-youtube"></i></li>
+
+                        </ul>
+                    </div>
                     <!-- <div class="aside-icons">
                         <div class="aside-icon">
                             <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -128,10 +141,15 @@
                         <h3>немного о цифрах</h3>
                     </div>
                     <div class="second-page__content-icon-content">
-                        <img src="/img/armchair1.svg" alt="">
-                        <p><span class="gold">1600</span> посадочный мест</p>
-                        <img src="img/view.svg" alt="">
-                        <p><span>350</span> лет истории</p>
+                        <div class="first-icon">
+                            <img src="/img/armchair1.svg" alt="">
+                            <p><span class="gold">1600</span> посадочный мест</p>
+                        </div>
+                        <div class="second-icon">
+                            <img src="img/view.svg" alt="">
+                            <p><span class="gold">350</span> лет истории</p>
+                        </div>
+
                     </div>
                 </div>
                 <div class="second-page__content-image">
@@ -324,10 +342,14 @@ responsive:{
 <script>
     const menu_toggle  =  document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
+    const sidebar_close = document.querySelector('.menu-toggle-close');
 
     menu_toggle.addEventListener('click', function(){
         sidebar.classList.toggle('active');
         menu_toggle.classList.toggle('active');
     });
+    function myFunction(x){
+        $("#iChange").find("i").toggleClass("fa-bars fa-x");
+    }
 </script>
 </html>
