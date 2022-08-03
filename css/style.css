@@ -743,7 +743,7 @@ footer{
 
 @media (min-width:576px) and (max-width:767px){
     .phone-mobile{
-        display: none;
+        display: block  ;
     }
     .sidebar{
         display: block;
