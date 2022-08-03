@@ -841,6 +841,9 @@ footer{
 }
 
 @media (max-width:576px){
+    .phone-mobile{
+        display: block  ;
+    }
     .sidebar{
         display: block;
     }
