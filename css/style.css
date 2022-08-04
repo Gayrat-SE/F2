@@ -16,6 +16,7 @@ html {
     display: none;
     position: absolute;
     left: -100%;
+    transition: 0.5s;
 }
 .sidebar.active {
     left: 0;
@@ -66,6 +67,7 @@ nav .menu-list ul {
     left: 20px;
     font-size: 24px;
     z-index: 4;
+    transition: 0.6s;
 }
 .menu-toggle.active {
     display: none;
@@ -729,6 +731,15 @@ footer{
     .sidebar{
         display: block;
     }
+    .menu-toggle{
+        display: block;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .menu-toggle.active{
+        display: block;
+    }
     .menu-toggle-close.active{
         display: block;
     }
@@ -738,9 +749,6 @@ footer{
     .main-content__slider{
         display: none;
     }
-    .menu-toggle {
-		display: block;
-	}
     .phone-mobile{
         display: block;
     }
@@ -845,8 +853,37 @@ footer{
     }
 
     .second-page {
-        margin: 150px 15%;
+        margin: 150px 10%;
+    }
+    .second-page__content-info{
         text-align: center;
+    }
+    .second-page__content-icon{
+        margin-top: 20px;
+    }
+    .second-page__content-icon-content{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .second-page__content-info {
+        width: auto;
+    }
+    .second-page__content-icon{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .second-page__content-icon-header{
+        text-align: center;
+    }
+    .second-page__content-icon-content{
+        display: flex;
+        justify-content: space-around;
+    }
+    .second-page__content-icon-content p{
+        display: block;
     }
     .second-page__content-image{
         display: none;
@@ -862,14 +899,41 @@ footer{
     .slider-image:nth-child(2n+1){
         display: none;
     }
-    .info-section{
-        margin: 150px 0;
+    .info-section {
+        margin: 100px  5%;
     }
-    .info-section__content-years {
-        padding-left: 20px;
+    .info-section__content{
+        display: flex;
+        flex-wrap: nowrap;
     }
+    .info-section__content-years{
+        text-align: center;
+        margin: 30px;
+        padding: 0;
+    }
+    .info-section__content-years h3 {
+        font-size: 34px;
+        line-height: 50px;
+        text-align: center;
+    }
+    .info-section__rayting {
+        text-align: center;
+        padding-top: 80px;
+    }
+    .info-section img {
+        width: 40px;
+    }
+
+    
+
     .info-section__content-text {
-        padding-right: 10px;
+        padding-right: 0px;
+    }
+    .info-section__comment p{
+        font-size: 24px;
+        width: auto;
+        text-align: center;
+        line-height: 30px;
     }
     .partner-section{
         width: 90%;
@@ -1072,6 +1136,10 @@ footer{
 }
 
 @media (min-width:280px) and (max-width:570px)  {
+    .sidebar-icons  a{
+        width: 24px;
+        height: 24px;
+    }
     .main-page__content {
         width: 80%;
     }
