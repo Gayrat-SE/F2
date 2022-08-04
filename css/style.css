@@ -12,29 +12,28 @@
 .sidebar {
     display: none;
     position: absolute;
-    left: -60%;
+    left: -100%;
 }
 .sidebar.active {
     left: 0;
 }
-nav {
-    /* background-color: #333; */
-    margin-top: -30px;
-}
+
 nav .menu-list ul {
     display: flex;
     flex-direction: column;
     list-style: none;
     margin: auto;
     width: 45%;
-    height: 550px;
+    /* height: 550px; */
     padding: 0;
     position: fixed;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background-color: #333;
     height: 100vh;
+    padding-left: 30px;
 }
+
 
 .phone-mobile{
     display: none;
@@ -57,20 +56,55 @@ nav .menu-list ul {
     z-index: 1;
 }
 .menu-toggle.active {
-    display: block;
+    display: none;
     left: 35%;
 
 }
 
 .menu-toggle-close.active {
-    position:relative;
-    display: block;
-    top: 0;
+    position:fixed;
+    display: none;
+    top: 30px;
     left: 80%;
 }
+
+.sidebar-icons {
+    position: fixed;
+    z-index: 2;
+    top: 75%;
+    width: 40%;
+    margin-left: 30px;
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+}
+.sidebar-icons  a {
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 50px;
+    height: 50px;
+    margin: 20px 20px;
+    color: #fff;
+    font-size: 32px;
+}
+
+.sidebar-icons  a:hover i{
+    color: #d1a954;
+}
+
+.menu-list{
+    display: flex;
+    position: fixed;
+}
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 nav ul li {
     display: block;
     padding-top: 30px;
+    padding-left: 30px;
 }
 
 nav ul li a {
@@ -159,16 +193,11 @@ aside {
     font-size: 22px;
     padding-left: 40px;
 }
-
+.aside-icon a:hover i{
+    color: #d1a954;
+}
 .aside-icon {
     padding: 10px;
-}
-.fa {
-    color: #fff;
-}
-.fa-instagram {
-    color: #d1a954;
-
 }
 
 header{
@@ -187,7 +216,9 @@ header ul li{
     margin-top: 60px;
 
 }
-
+header ul li a:hover {
+    border-bottom: 2px solid #d1a954;
+}
 header ul li a{
     text-decoration: none;
     color: #fff;
@@ -332,6 +363,10 @@ header ul li a{
     color: #fff;
 }
 
+.slider-page__content{
+    margin-top: 100px;
+}
+
 .slider-icon {
     position: relative;
     top: 350px;
@@ -364,6 +399,7 @@ header ul li a{
 .info-section__content-years{
     padding-top: 125px;
     padding-left: 190px;
+    padding-bottom: 125px;
 }
 
 .info-section__content-years h3{
@@ -419,6 +455,10 @@ header ul li a{
     padding: 30px;
 }
 
+.partner-section__logo img:nth-child(4n+1){
+    display: none;
+}
+
 .form-section{
     width: 65%;
     margin: 100px auto;
@@ -460,7 +500,12 @@ header ul li a{
 .form-section__content-form form{
     display: flex;
 }
-
+.form-section__content-form form input{
+    background-color: #565656;
+}
+#textarea1{
+    background-color: #565656;
+}
 .form-first__row, .form-second__row, .form-third__row{
     margin: 0 10px;
 }
@@ -529,6 +574,7 @@ footer{
     .sidebar{
         display: none;
     }
+    
     header {
         margin-left: 17%;
     }
@@ -590,13 +636,15 @@ footer{
         margin-left: 10%;
     }
     header ul li{
-        margin: 45px;
+        margin: 35px;
     }
-    header ul li:last-child{
+    /* header ul li:last-child{
         border-bottom: 1px solid #d1a954;
         text-align: center;
         margin: auto;
-        margin-left: 1%;
+        /* margin-left: 1%; */
+    header ul li:hover {
+        border-bottom: 2px solid #d1a954;
     }
     .main-content__slider{
         display: none;
@@ -748,7 +796,14 @@ footer{
     .sidebar{
         display: block;
     }
+    .sidebar-icons a {
+        margin: 20px 20px;
+        /* margin-left: 10%; */
+    }
     .menu-toggle {
+        display: block;
+    }
+    .menu-toggle.active{
         display: block;
     }
     .sidebar.active{
@@ -759,6 +814,7 @@ footer{
     }
     .menu-toggle-close.active{
         display: block;
+        position: fixed;
     }
     header,aside {
         display: none;
@@ -848,6 +904,9 @@ footer{
         display: block;
     }
     .menu-toggle {
+        display: block;
+    }
+    .menu-toggle.active{
         display: block;
     }
     .sidebar.active{
@@ -991,3 +1050,67 @@ footer{
     }
 }
 
+@media (min-width:280px) and (max-width:570px)  {
+    .main-page__content {
+        width: 80%;
+    }
+    .main-content__text {
+        width: 95%;
+    }
+    .mtext-header{
+        font-size: 24px;
+        width: 200px;
+        margin: auto;
+        margin-top: 150px;
+    }
+    .mtext-info {
+        width: 100%;
+        text-align: center;
+    }
+    .second-page__header h3{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .second-page__content-info{
+        width: 100%;
+    }
+    .second-page__content-icon{
+        width: 100%;
+    }
+    .slider-page{
+        width: 90%;
+        margin: auto;
+    }
+    .slider-page__header{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .info-section__content-years{
+        margin: 10%;
+        padding: 30px 0;
+    }
+    .info-section__rayting{
+        padding-top: 50%;
+    }
+    .info-section__comment p{
+        /* width: 90px; */
+        font-size: 15px;
+    }
+    .partner-section__header h3{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .form-section__header h3{
+        font-size: 30px;
+        line-height: 30px;
+    }
+    .form-section__content-form{
+        width: 90%;
+        margin: auto;
+    }
+    .mtext-button{
+        width: 100px;
+        margin: auto;
+        margin-top: 50px;
+    }
+}
