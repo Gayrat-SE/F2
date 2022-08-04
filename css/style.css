@@ -5,6 +5,9 @@
     list-style: none;
     color: #fff;
 }
+html {
+    scroll-behavior: smooth;
+  }
 
 .container {
     background-color: #333 !important;  
@@ -16,6 +19,14 @@
 }
 .sidebar.active {
     left: 0;
+}
+nav{
+    z-index: 2;
+    background-color: #333;
+}
+.menu-list {
+    z-index: 2;
+    background-color: #333;
 }
 
 nav .menu-list ul {
@@ -32,6 +43,7 @@ nav .menu-list ul {
     background-color: #333;
     height: 100vh;
     padding-left: 30px;
+    z-index: 100 !important;
 }
 
 
@@ -53,7 +65,7 @@ nav .menu-list ul {
     top: 30px;
     left: 20px;
     font-size: 24px;
-    z-index: 1;
+    z-index: 4;
 }
 .menu-toggle.active {
     display: none;
@@ -66,6 +78,7 @@ nav .menu-list ul {
     display: none;
     top: 30px;
     left: 80%;
+    z-index: 100;
 }
 
 .sidebar-icons {
@@ -179,7 +192,7 @@ aside {
 .swiper-slide img {
     display: inline-block;
     /* width: 100%; */
-    height: 100%;
+    /* height: 100%; */
   }
 
 .swiper {
@@ -195,6 +208,7 @@ aside {
 }
 .aside-icon a:hover i{
     color: #d1a954;
+    transition: 0.5s;
 }
 .aside-icon {
     padding: 10px;
@@ -214,10 +228,15 @@ header ul li{
     color: #fff ;
     margin: 60px;
     margin-top: 60px;
-
+    transition: 0.5s;
 }
-header ul li a:hover {
-    border-bottom: 2px solid #d1a954;
+header ul li a{
+    padding: 5px;
+}
+header ul li:hover a {
+    /* padding: 5px; */
+    border-bottom: 1px solid #d1a954;
+    transition: 0.5s;
 }
 header ul li a{
     text-decoration: none;
@@ -365,6 +384,7 @@ header ul li a{
 
 .slider-page__content{
     margin-top: 100px;
+    z-index: -3;
 }
 
 .slider-icon {
@@ -446,18 +466,16 @@ header ul li a{
     color: #fff;
 }
 
-.partner-section__logo{
+.partner-section__logo {
     margin-top: 80px;
-    margin-left: 30px   ;
+    margin-left: 30px;
 }
 
-.partner-section__logo img {
+.partner-section__logo .swiper-slide img {
     padding: 30px;
+    z-index: -1 !important;
 }
 
-.partner-section__logo img:nth-child(4n+1){
-    display: none;
-}
 
 .form-section{
     width: 65%;
@@ -709,6 +727,9 @@ footer{
 
 @media (min-width:768px) and (max-width:991px){
     .sidebar{
+        display: block;
+    }
+    .menu-toggle-close.active{
         display: block;
     }
     aside, header {

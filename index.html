@@ -77,10 +77,10 @@
             <header>
                 <ul>
                     <li><a href="#">Main</a></li>
-                    <li><a href="#">Theatre</a></li>
-                    <li><a href="#">Our Parthers</a></li>
-                    <li><a href="#">Partners</a></li>
-                    <li><a href="#">Contacts</a></li>
+                    <li><a href="#theater">Theatre</a></li>
+                    <li><a href="#slider">Gallery</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contacts</a></li>
                     <li><a href="#" class="phonenumber">+74951234567</a></li>
                 </ul>
             </header>
@@ -108,7 +108,7 @@
         </div>
         <!-- main page end -->
         <!-- second page -->
-        <div class="second-page">
+        <div class="second-page" id="theater">
             <div class="second-page__header">
                 <h3><span class="gold">о</span> театре</h3>
             </div>
@@ -144,7 +144,7 @@
         </div>
         <!-- second page end -->
         <!-- slider section -->
-        <div class="slider-page">
+        <div class="slider-page" id="slider">
             <div class="slider-page__header">
                 <h3><span class="gold">наши</span> постановки</h3>
             </div>
@@ -162,7 +162,7 @@
         </div>
         <!-- slider section end -->
         <!-- info section -->
-        <div class="info-section">
+        <div class="info-section" id="info">
             <div class="info-section__content">
                 <div class="info-section__content-years">
                     <h3>2018</h3>
@@ -187,26 +187,27 @@
         </div>
         <!-- info section end -->
         <!-- partners section -->
-        <div class="partner-section">
+        <div class="partner-section" id="partners">
             <div class="partner-section__header">
                 <h3>
                     <span class="gold">партнеры </span> театра
                 </h3>
             </div>
-            <div class="partner-section__logo">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
-                <img src="/img/partnerLogo.png" alt="">
+            <div class="partner-page__content swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide " data-fancybox="gallery" href="img/partnerLogo.png"><img src="/img/partnerLogo.png" alt=""></div>
+                    <div class="swiper-slide" data-fancybox="gallery" href="img/partnerLogo.png"><img src="/img/partnerLogo.png" alt=""></div>
+                  <div class="swiper-slide" data-fancybox="gallery" href="img/partnerLogo.png"><img src="/img/partnerLogo.png" alt=""></div>
+                  <div class="swiper-slide" data-fancybox="gallery" href="img/partnerLogo.png"><img src="/img/partnerLogo.png" alt=""></div>
+                </div>
+                <!-- <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div> -->
             </div>
         </div>
         <!-- partners section end -->
         <!-- form section -->
-        <div class="form-section">
+        <div class="form-section" id="contact">
             <div class="form-section__header">
                 <h3><span class="gold">стать</span> меценатом</h3>
             </div>
@@ -300,7 +301,39 @@
             }
         }
       });
+    var swiper2 = new Swiper2(".mySwiper2",{
+        slidesPerView: 4,
+        spaceBetween: 0,
+        loop: true,
+        autoplay: 5000,
+        breakpoints: {
+            200:{
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is >= 320px
+            320: {
+                slidesPerView: 1,
+                spaceBetween: 0
+            },
+            // when window width is >= 480px
+            580: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            },
+            // when window width is >= 640px
+            850: {
+                slidesPerView: 3,
+                spaceBetween: 10
+            },
+            920: {
+                slidesPerView: 4,
+                spaceBetween: 0
+            }
+        }
+    })
 </script>
+
 <script>
     // const nextBtn = '<img src="/img/nextBtn.svg" alt="">';
     // const prevBtn = '<img src="/img/prevBtn.svg" alt="">';
