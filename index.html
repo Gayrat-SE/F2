@@ -360,7 +360,7 @@ responsive:{
 }
 })
 </script>
-<script>
+<script> 
     const menu_toggle  =  document.querySelector('.menu-toggle');
     const sidebar = document.querySelector('.sidebar');
     const sidebar_close = document.querySelector('.menu-toggle-close');
@@ -369,8 +369,11 @@ responsive:{
         sidebar.classList.toggle('active');
         menu_toggle.classList.toggle('active');
     });
-    function myFunction(x){
-        $("#iChange").find("i").toggleClass("fa-bars fa-x");
+    if(sidebar){
+        sidebar.addEventListener('click', function(){
+            sidebar.classList.remove('active');
+            menu_toggle.classList.remove('active');
+        });
     }
 </script>
 <script>
@@ -379,6 +382,6 @@ responsive:{
     sidebar.classList.remove("active")
     menu_toggle.classList.remove("active")
      }
-  }, true);
+  },true);
 </script>
 </html>
